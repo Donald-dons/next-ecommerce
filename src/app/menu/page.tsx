@@ -11,7 +11,7 @@ const MenuPage = () => {
       {/* Hero Section */}
       <div className="relative w-full h-64 md:h-80 lg:h-[400px]">
         <Image
-          src="/temporary/hero.jpg" // Replace this with your desired hero image
+          src="/temporary/hero.jpg"
           alt="Hero Banner"
           fill
           className="object-cover rounded-lg"
@@ -58,10 +58,10 @@ const MenuPage = () => {
                     <Link
                       href={`/menu/${item.slug}`}
                       key={item.id}
-                      className="flex flex-col items-center text-center space-y-2 hover:scale-105 transition"
+                      className="flex flex-col items-center text-center space-y-2"
                     >
-                      {/* Image Section */}
-                      <div className="relative w-full h-48 rounded-2xl overflow-hidden">
+                      {/* Image Section with hover effect */}
+                      <div className="relative w-full h-48 rounded-2xl overflow-hidden hover:scale-105 transition">
                         {item.img && (
                           <Image
                             src={item.img}

@@ -183,5 +183,13 @@ export const menu: Menu = [
     img: "/temporary/a2.jpg",
     color: "green",
     category: "Macarons"
+  },
+  {
+    id: 5,
+    slug: "cookies",
+    title: "Seasonal Specials",
+    img: "/temporary/a2.jpg",
+    color: "green",
+    category: "Cookies"
   }
 ];
