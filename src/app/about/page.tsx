@@ -1,19 +1,45 @@
-import React from "react";
-import Link from "next/link"; // ✅ Add link
+"use client";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 const AboutPage = () => {
+  const images = [
+    "/frame1.png",
+    "/frame2.png",
+    "/frame3.png",
+    "/frame1.png",
+    "/frame2.png",
+    "/frame3.png",
+    "/frame1.png",
+    "/frame2.png",
+    "/frame3.png",
+    "/frame1.png",
+    "/frame2.png",
+    "/frame3.png",
+  ];
+
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+    }, 3000); // Magpalit every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <>
       <div className="about-page p-8 bg-[#FFFAFA]">
-        {/* Hero Section */}
+        {/* Hero Section with Carousel */}
         <section className="text-center mb-16">
           <div className="relative w-full max-w-[1240px] h-[600px] rounded-[40px] overflow-hidden bg-pink-50 mx-auto mt-7">
             <Image
-              src="/frame3.png"
-              alt="Blush Bakes Storefront"
+              src={images[currentImage]}
+              alt={`Blush Bakes Image ${currentImage + 1}`}
               fill
-              className="object-cover"
+              className="object-cover transition-opacity duration-1000"
               priority
             />
           </div>

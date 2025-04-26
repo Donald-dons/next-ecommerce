@@ -1,5 +1,6 @@
 import { featuredProducts } from "@/data";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Featured = () => {
@@ -44,9 +45,11 @@ const Featured = () => {
 
       {/* Sticky See More Button */}
       <div className="bg-pink-100 py-6 flex justify-center">
+        <Link href="/menu">
         <button className="bg-rose-500 hover:bg-rose-600 text-white text-lg font-medium px-8 py-3 rounded-full shadow-md">
           See More
         </button>
+        </Link>
       </div>
     </div>
   );

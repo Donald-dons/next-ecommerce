@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const HeroSection = () => {
@@ -28,9 +29,11 @@ const HeroSection = () => {
             Each treat is made with love, using quality ingredients and a dash of blush
             to make every bite a sweet, heart-shaped smile.
           </p>
-          <button className="bg-[#c63466] text-white text-base font-medium py-2.5 px-8 rounded-full shadow hover:bg-[#ad2b57] transition-all">
-            About Us
-          </button>
+          <Link href="/about">
+              <button className="bg-[#c63466] text-white text-base font-medium py-2.5 px-8 rounded-full shadow hover:bg-[#ad2b57] transition-all">
+              About Us
+              </button>
+          </Link>         
         </div>
       </div>
 

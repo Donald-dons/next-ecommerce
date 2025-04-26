@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const SpecialOrders = () => {
@@ -16,9 +17,11 @@ const SpecialOrders = () => {
             birthday cake, an elegant wedding centerpiece, or a unique sweet surprise. Let us bring
             your ideas to life with our signature blush-hued perfection!
           </p>
-          <button className="bg-rose-500 hover:bg-rose-600 text-white px-8 py-3 rounded-full text-lg font-semibold transition duration-300">
-            Place An Order
-          </button>
+          <Link href="/special_orders">
+            <button className="bg-rose-500 hover:bg-rose-600 text-white px-8 py-3 rounded-full text-lg font-semibold transition duration-300">
+             Place An Order
+            </button>
+          </Link>
         </div>
 
         {/* IMAGE CONTAINER */}

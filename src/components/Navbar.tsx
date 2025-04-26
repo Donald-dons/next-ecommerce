@@ -20,11 +20,6 @@ const Navbar = () => {
         <Link href="/menu" className="hover:text-pink-400">Products</Link>
         <Link href="/special_orders" className="hover:text-pink-400">Special Orders</Link>
         <Link href="/contact" className="hover:text-pink-400">Contact</Link>
-        {!user ? (
-          <Link href="/login" className="bg-[#f9d7e0] text-[#d14b78] px-4 py-1 rounded-full hover:bg-[#f8c8d3] transition">Login</Link>
-        ) : (
-          <Link href="/orders" className="text-[#d14b78]">Orders</Link>
-        )}
       </div>
 
       {/* MOBILE MENU ICON or CART PLACEHOLDER */}
