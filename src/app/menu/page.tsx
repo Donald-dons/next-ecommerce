@@ -11,7 +11,7 @@ const MenuPage = () => {
       {/* Hero Section */}
       <div className="relative w-full h-64 md:h-80 lg:h-[400px]">
         <Image
-          src="/temporary/hero.jpg"
+          src="/temporary/a2.jpg"
           alt="Hero Banner"
           layout="fill"
           className="object-cover rounded-lg"
