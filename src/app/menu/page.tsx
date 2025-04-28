@@ -25,11 +25,11 @@ const MenuPage = () => {
       </div>
 
       {/* Main Section */}
-      <div className="flex flex-col lg:flex-row px-0 lg:px-0 xl:px-0 gap-6">
+      <div className="flex flex-col lg:flex-row px-0 gap-6">
         {/* Sidebar */}
-        <aside className="w-full lg:w-[250px] bg-white p-4 min-h-fit lg:block flex flex-col items-start gap-[50px] py-[50px]">
+        <aside className="w-full lg:w-[250px] bg-white p-4 min-h-fit flex flex-col items-center gap-12 py-12">
           <div className="sticky top-24">
-            <ul className="space-y-4 text-pink-700 font-semibold text-center">
+            <ul className="space-y-6 text-pink-700 font-semibold text-center">
               {categories.map((cat) => (
                 <li key={cat}>
                   <a href={`#${cat.toLowerCase()}`} className="hover:underline">
@@ -43,50 +43,50 @@ const MenuPage = () => {
 
         {/* Content Sections */}
         <main className="w-full lg:flex-1 p-6 lg:px-12 xl:px-24 space-y-24">
-  {categories.map((cat) => (
-    <section key={cat} id={cat.toLowerCase()}>
-      {/* Category Title */}
-      <h2 className="text-2xl font-bold text-pink-700 mb-6 text-center border-b-2 border-pink-300 inline-block w-full uppercase tracking-wider">
-        <span className=" border-pink-300 pb-2">{cat}</span>
-      </h2>
-
-      {/* Grid for Images */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-50">
-        {menu
-          .filter((item) => item.category?.toLowerCase() === cat.toLowerCase())
-          .map((item) => (
-            <Link
-              href={`/menu/${item.slug}`}
-              key={item.id}
-              className="flex flex-col items-center text-center space-y-4"
-            >
-              {/* Image */}
-              <div className="relative h-[300px] w-[300px] rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300">
-                {item.img && (
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    layout="fill"
-                    className="object-cover"
-                  />
-                )}
-              </div>
-
-              {/* Title */}
-              <h2 className="font-semibold text-lg text-pink-700">
-                {item.title}
+          {categories.map((cat) => (
+            <section key={cat} id={cat.toLowerCase()}>
+              {/* Category Title */}
+              <h2 className="text-2xl font-bold text-pink-700 mb-8 text-center border-b-2 border-pink-300 inline-block w-full uppercase tracking-wider">
+                <span className="pb-2">{cat}</span>
               </h2>
 
-              {/* Button */}
-              <button className="px-4 py-2 rounded-full bg-pink-600 text-white hover:bg-pink-700 transition">
-                Order Now
-              </button>
-            </Link>
+              {/* Grid for Images */}
+              <div className="grid grid-cols-2 gap-12">
+                {menu
+                  .filter((item) => item.category?.toLowerCase() === cat.toLowerCase())
+                  .map((item) => (
+                    <Link
+                      href={`/menu/${item.slug}`}
+                      key={item.id}
+                      className="flex flex-col items-center text-center space-y-4"
+                    >
+                      {/* Image */}
+                      <div className="relative h-[400px] w-full rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300">
+                        {item.img && (
+                          <Image
+                            src={item.img}
+                            alt={item.title}
+                            layout="fill"
+                            className="object-cover"
+                          />
+                        )}
+                      </div>
+
+                      {/* Title */}
+                      <h2 className="font-semibold text-xl text-pink-700">
+                        {item.title}
+                      </h2>
+
+                      {/* Button */}
+                      <button className="px-6 py-3 rounded-full bg-pink-600 text-white hover:bg-pink-700 transition">
+                        Order Now
+                      </button>
+                    </Link>
+                  ))}
+              </div>
+            </section>
           ))}
-      </div>
-    </section>
-  ))}
-</main>
+        </main>
       </div>
     </div>
   );

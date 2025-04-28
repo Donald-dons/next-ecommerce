@@ -4,11 +4,12 @@ import React from "react";
 
 const SpecialOrders = () => {
   return (
-    <section className="w-screen flex items-center justify-center px-4 py-10 bg-pink-100">
-      <div className="max-w-6xl w-full p-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <section className="w-full flex items-center justify-center px-4 py-20 bg-[rgba(255,204,211,0.5)] overflow-hidden">
+      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+
         {/* TEXT CONTAINER */}
-        <div className="flex flex-col items-start justify-center gap-6 text-left">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-pink-600 leading-tight">
+        <div className="flex flex-col items-start justify-center gap-6 text-left px-6">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-rose-600 leading-tight">
             Special Orders
           </h2>
           <p className="text-gray-800 text-lg md:text-xl leading-relaxed">
@@ -19,23 +20,41 @@ const SpecialOrders = () => {
           </p>
           <Link href="/special_orders">
             <button className="bg-rose-500 hover:bg-rose-600 text-white px-8 py-3 rounded-full text-lg font-semibold transition duration-300">
-             Place An Order
+              Place An Order
             </button>
           </Link>
         </div>
 
         {/* IMAGE CONTAINER */}
-        <div className="relative w-full h-[400px] max-w-[500px]"> {/* Ensure height is defined */}
-          <div className="w-full h-full relative overflow-hidden">
-            <Image
-              src="/cloud1.png"  // Ensure the image is in the public directory
-              alt="Pink Strawberry Cake"
-              layout="fill" // 'layout="fill"' works properly with `fill` prop
-              objectFit="cover" // Ensures the image fills the container while maintaining its aspect ratio
-              className="z-0"
-            />
+        <div className="flex justify-center items-center relative -mt-16">
+          <div className="relative w-[480px] h-[480px]">
+            <svg viewBox="0 0 600 500" className="w-full h-full">
+              <defs>
+                <clipPath id="cloudClip" clipPathUnits="userSpaceOnUse">
+                  <circle cx="160" cy="250" r="120" />
+                  <circle cx="300" cy="220" r="140" />
+                  <circle cx="460" cy="260" r="110" />
+                  <circle cx="360" cy="360" r="130" />
+                  <circle cx="200" cy="380" r="110" />
+                </clipPath>
+              </defs>
+
+              <foreignObject width="100%" height="100%" clipPath="url(#cloudClip)">
+                <div className="w-full h-full relative">
+                  <div className="absolute inset-0">
+                    <Image
+                      src="/cloud1.png" // ← file path ito
+                      alt="Pink Strawberry Cake"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </foreignObject>
+            </svg>
           </div>
         </div>
+
       </div>
     </section>
   );

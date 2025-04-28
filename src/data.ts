@@ -2,8 +2,6 @@ type Product = {
   id: number;
   title: string;
   img?: string;
-  price: number;
-  options?: { title: string; additionalPrice: number }[];
   category?: string;
 };
 
@@ -12,192 +10,144 @@ type Products = Product[];
 export const featuredProducts: Products = [
   {
     id: 1,
-    title: "Chocolate Fudge",
-    img: "/temporary/a1.png",
-    price: 3.5,
-    options: [
-      { title: "Small", additionalPrice: 0 },
-      { title: "Medium", additionalPrice: 0.5 },
-      { title: "Large", additionalPrice: 1 }
-    ],
-    category: "waffles"
+    title: "Cake",
+    img: "/temporary/a4.png",
+    category: "cakes",
   },
   {
     id: 2,
-    title: "Vanilla Dream",
-    img: "/temporary/a2.jpg",
-    price: 3.2,
-    options: [
-      { title: "Small", additionalPrice: 0 },
-      { title: "Medium", additionalPrice: 0.5 },
-      { title: "Large", additionalPrice: 1 }
-    ],
-    category: "cupcakes"
+    title: "Cupcakes",
+    img: "/temporary/a5.png",
+    category: "cupcakes",
   },
   {
     id: 3,
-    title: "Red Velvet Delight",
+    title: "Macarons",
     img: "/temporary/a1.png",
-    price: 3.8,
-    options: [
-      { title: "Small", additionalPrice: 0 },
-      { title: "Medium", additionalPrice: 0.5 },
-      { title: "Large", additionalPrice: 1 }
-    ],
-    category: "cupcakes"
+    category: "macarons",
   },
   {
     id: 4,
-    title: "Lemon Zest",
+    title: "Waffles",
     img: "/temporary/a2.jpg",
-    price: 3.3,
-    options: [
-      { title: "Small", additionalPrice: 0 },
-      { title: "Medium", additionalPrice: 0.5 },
-      { title: "Large", additionalPrice: 1 }
-    ],
-    category: "cupcakes"
+    category: "waffles",
   },
-  {
-    id: 5,
-    title: "Strawberry Swirl",
-    img: "/temporary/a1.png",
-    price: 3.6,
-    options: [
-      { title: "Small", additionalPrice: 0 },
-      { title: "Medium", additionalPrice: 0.5 },
-      { title: "Large", additionalPrice: 1 }
-    ],
-    category: "cupcakes"
-  },
-  {
-    id: 6,
-    title: "Caramel Crunch",
-    img: "/temporary/a1.png",
-    price: 3.7,
-    options: [
-      { title: "Small", additionalPrice: 0 },
-      { title: "Medium", additionalPrice: 0.5 },
-      { title: "Large", additionalPrice: 1 }
-    ],
-    category: "cupcakes"
-  },
-  {
-    id: 7,
-    title: "Mint Chocolate Chip",
-    img: "/temporary/a2.jpg",
-    price: 3.9,
-    options: [
-      { title: "Small", additionalPrice: 0 },
-      { title: "Medium", additionalPrice: 0.5 },
-      { title: "Large", additionalPrice: 1 }
-    ],
-    category: "cupcakes"
-  },
-  {
-    id: 8,
-    title: "Cookies & Cream",
-    img: "/temporary/a1.png",
-    price: 3.4,
-    options: [
-      { title: "Small", additionalPrice: 0 },
-      { title: "Medium", additionalPrice: 0.5 },
-      { title: "Large", additionalPrice: 1 }
-    ],
-    category: "macarons"},
-  {
-    id: 9,
-    title: "Tiramisu Bliss",
-    img: "/temporary/cake.jpg",
-    price: 4.0,
-    options: [
-      { title: "Small", additionalPrice: 0 },
-      { title: "Medium", additionalPrice: 0.5 },
-      { title: "Large", additionalPrice: 1 }
-    ],
-    category: "cupcakes"
-  }
 ];
+
 
 export const singleProduct: Product = {
   id: 1,
   title: "Chocolate Fudge",
   img: "/temporary/a1.png",
-  price: 3.5,
-  options: [
-    {
-      title: "Small",
-      additionalPrice: 0,
-    },
-    {
-      title: "Medium",
-      additionalPrice: 0.5,
-    },
-    {
-      title: "Large",
-      additionalPrice: 1,
-    },
-  ],
   category: "cupcakes",
 };
 
 
 type Menu = {
-  category: any;
+  category: string;
   id: number;
   slug: string;
   title: string;
   img?: string;
-  color: string;
 }[];
 
 export const menu: Menu = [
   {
     id: 1,
-    slug: "cupcakes",
-    title: "Delicious Cupcakes",
-    img: "/temporary/a1.png",
-    color: "pink",
-    category: "Cupcakes"
+    slug: "cakes",
+    title: "Strawberry Dream",
+    img: "/temporary/2.webp",
+    category: "Cakes"
   },
   {
     id: 2,
-    slug: " cakes",
-    title: "Fun Cake Pops",
-    img: "/temporary/a2.jpg",
-    color: "yellow",
+    slug: "cakes",
+    title: "Pink Velvet",
+    img: "/temporary/3.webp",
     category: "Cakes"
   },
   {
     id: 3,
-    slug: "waffles",
-    title: "Flaky Waffles",
-    img: "/temporary/a1.png",
-    color: "orange",
-    category: "Waffles"
+    slug: "cakes",
+    title: "Pink Ombre Cake",
+    img: "/temporary/12.webp",
+    category: "Cakes"
   },
   {
     id: 4,
-    slug: "macarons",
-    title: "Seasonal Specials",
-    img: "/temporary/a2.jpg",
-    color: "green",
-    category: "Macarons"
+    slug: "cakes",
+    title: "Berry Blush Delight",
+    img: "/temporary/10.webp",
+    category: "Cakes"
   },
   {
     id: 5,
-    slug: "cookies",
-    title: "Seasonal Specials",
-    img: "/temporary/a2.jpg",
-    color: "green",
-    category: "Cookies"
+    slug: "waffles",
+    title: "Strawberry Shortcake Waffle",
+    img: "/temporary/4.webp",
+    category: "Waffles"
   },
   {
     id: 6,
+    slug: "waffles",
+    title: "Pink Velvet Waffle",
+    img: "/temporary/5.webp",
+    category: "Waffles"
+  },
+  {
+    id: 7,
+    slug: "macarons",
+    title: "Strawberry Macaron Burger Delight",
+    img: "/temporary/6.webp",
+    category: "Macarons"
+  },
+  {
+    id: 8,
+    slug: "macarons",
+    title: "Cotton Candy Bliss",
+    img: "/temporary/14.webp",
+    category: "Macarons"
+  },
+  {
+    id: 9,
+    slug: "macarons",
+    title: "Cherry Blossom Kiss",
+    img: "/temporary/7.webp",
+    category: "Macarons"
+  },
+  {
+    id: 10,
+    slug: "macarons",
+    title: "Pink Champagne Macarons",
+    img: "/temporary/8.webp",
+    category: "Macarons"
+  },
+  {
+    id: 11,
+    slug: "cupcakes",
+    title: "Pink Champagne",
+    img: "/temporary/9.webp",
+    category: "Cupcakes"
+  },
+  {
+    id: 12,
+    slug: "cupcakes",
+    title: "Cherry Bomb",
+    img: "/temporary/16.png",
+    category: "Cupcakes"
+  },
+  {
+    id: 13,
     slug: "cookies",
-    title: "Seasonal Specials",
-    img: "/temporary/a2.jpg",
-    color: "green",
+    title: "Strawberry Shortcake Cookie",
+    img: "/temporary/15.webp",
     category: "Cookies"
-  }
+  },
+  {
+    id: 14,
+    slug: "cookies",
+    title: "Pink Velvet Crinkles",
+    img: "/temporary/a7.png",
+    category: "Cookies"
+  },
 ];

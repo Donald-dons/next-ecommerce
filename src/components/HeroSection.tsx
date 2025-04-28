@@ -10,7 +10,7 @@ const HeroSection = () => {
         {/* Left Image Container */}
         <div className="flex-1 w-full relative h-[500px] md:h-[450px] rounded-2xl shadow-xl overflow-hidden">
           <Image
-            src="/blushbakes.jpg"
+            src="/blushbakes.webp"
             alt="Blush Bakes Storefront"
             fill
             className="object-cover"
@@ -46,6 +46,7 @@ const HeroSection = () => {
           preserveAspectRatio="none"
         >
           <path
+            className="fill-[rgba(255,218,223,0.5)]"
             d="
               M0,0 
               C40,100 120,100 160,0 
@@ -68,7 +69,6 @@ const HeroSection = () => {
               C2760,100 2840,100 2880,0 
               L2880,100 L0,100 Z
             "
-            fill="#fce7f3"
           />
         </svg>
       </div>

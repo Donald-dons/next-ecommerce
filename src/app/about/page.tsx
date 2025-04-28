@@ -5,18 +5,18 @@ import Image from "next/image";
 
 const AboutPage = () => {
   const images = [
-    "/frame1.png",
-    "/frame2.png",
-    "/frame3.png",
-    "/frame1.png",
-    "/frame2.png",
-    "/frame3.png",
-    "/frame1.png",
-    "/frame2.png",
-    "/frame3.png",
-    "/frame1.png",
-    "/frame2.png",
-    "/frame3.png",
+    "/a.webp",
+    "/b.webp",
+    "/c.webp",
+    "/a.webp",
+    "/b.webp",
+    "/c.webp",
+    "/a.webp",
+    "/b.webp",
+    "/c.webp",
+    "/a.webp",
+    "/b.webp",
+    "/c.webp",
   ];
 
   const [currentImage, setCurrentImage] = useState(0);
@@ -24,7 +24,7 @@ const AboutPage = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-    }, 3000); // Magpalit every 3 seconds
+    }, 3000); // change every 3 seconds
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -72,7 +72,7 @@ const AboutPage = () => {
           <div className="flex-1">
             <div className="relative w-full max-w-[601px] h-[390px] rounded-[40px] overflow-hidden mx-auto">
               <Image
-                src="/frame2.png"
+                src="/cake.png"
                 alt="Blush Bakes Mission"
                 fill
                 className="object-cover"
@@ -108,7 +108,7 @@ const AboutPage = () => {
       {/* Contact Section with Full-Width Image */}
       <section className="relative w-screen h-[600px]">
         <Image
-          src="/frame2.png"
+          src="/frame3.png"
           alt="Want To Know More About Us?"
           fill
           className="object-cover opacity-40"
