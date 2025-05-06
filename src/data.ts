@@ -1,3 +1,4 @@
+// Product Types & Data
 type Product = {
   id: number;
   title: string;
@@ -34,7 +35,6 @@ export const featuredProducts: Products = [
   },
 ];
 
-
 export const singleProduct: Product = {
   id: 1,
   title: "Chocolate Fudge",
@@ -42,16 +42,16 @@ export const singleProduct: Product = {
   category: "cupcakes",
 };
 
-
-type Menu = {
+// Menu Types & Data
+type MenuItem = {
   category: string;
   id: number;
   slug: string;
   title: string;
   img?: string;
-}[];
+};
 
-export const menu: Menu = [
+export const menu: MenuItem[] = [
   {
     id: 1,
     slug: "cakes",
@@ -149,5 +149,45 @@ export const menu: Menu = [
     title: "Pink Velvet Crinkles",
     img: "/temporary/a7.png",
     category: "Cookies"
+  },
+];
+
+// Cart Types & Data
+type CartItem = {
+  id: number;
+  title: string;
+  price: number;
+  quantity: number;
+  img: string;
+};
+
+export const cartItems: CartItem[] = [
+  {
+    id: 1,
+    title: "Strawberry Dream",
+    price: 1300,
+    quantity: 2,
+    img: "/temporary/a1.png",
+  },
+  {
+    id: 2,
+    title: "Pink Velvet",
+    price: 1500,
+    quantity: 1,
+    img: "/temporary/1.webp",
+  },
+  {
+    id: 3,
+    title: "Pink Ombre Cake",
+    price: 1200,
+    quantity: 1,
+    img: "/temporary/1.webp",
+  },
+  {
+    id: 4,
+    title: "Pink Ombre Cake",
+    price: 1200,
+    quantity: 1,
+    img: "/temporary/1.webp",
   },
 ];

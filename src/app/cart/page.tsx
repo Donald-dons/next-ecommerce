@@ -1,57 +1,45 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
+import { cartItems } from '@/data';
+import Link from 'next/link';
 
-const CheckoutPage = () => {
+const CartPage = () => {
   const [paymentMethod, setPaymentMethod] = useState<'cod' | 'gcash'>('cod');
 
   return (
     <div className="min-h-screen bg-pink-100 p-4 md:p-6 flex flex-col md:flex-row justify-center items-start gap-[15px]">
-      {/* LEFT: Shipping Form */}
-      <div className="bg-white p-6 rounded-2xl w-full max-w-2xl shadow-md flex flex-col justify-between mt-8">
-        <div>
-          <h2 className="text-[25px] font-bold text-rose-600 mb-2">Checkout</h2>
-          <h3 className="text-[25px] font-semibold text-rose-500 mb-4">Shipping Information</h3>
+      {/* LEFT: Shopping Cart */}
+      <div className="bg-white p-6 rounded-2xl w-full max-w-2xl shadow-md mt-8">
+        <h2 className="text-[25px] font-bold text-rose-600 mb-6">Shopping Cart</h2>
 
-          <form className="space-y-6 text-base">
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="w-full">
-                <label htmlFor="firstName" className="block text-sm text-gray-700 mb-1">First Name</label>
-                <input id="firstName" type="text" title="First Name" className="w-full border border-pink-300 p-3 rounded-xl" />
+        {/* Cart Items */}
+        {cartItems.map(item => (
+          <div key={item.id} className="flex items-center justify-between border-b py-4">
+            <div className="flex items-center gap-4">
+              <div className="relative w-24 h-24 rounded-xl overflow-hidden">
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  fill
+                  className="object-cover rounded-xl"
+                />
               </div>
-              <div className="w-full">
-                <label htmlFor="lastName" className="block text-sm text-gray-700 mb-1">Last Name</label>
-                <input id="lastName" type="text" title="Last Name" className="w-full border border-pink-300 p-3 rounded-xl" />
+              <div className="text-gray-800 text-[15px] font-semibold">{item.title}</div>
+            </div>
+
+            <div className="flex items-center gap-4 ">
+              <div className="flex items-center border rounded-lg px-2">
+                <button className="px-2 text-lg font-bold">−</button>
+                <span className="px-2">{item.quantity}</span>
+                <button className="px-2 text-lg font-bold">+</button>
               </div>
+              <div className="text-rose-600 font-semibold text-[15px]">₱{item.price}.00</div>
+              <button className="text-gray-400 hover:text-red-500 text-xl font-bold">×</button>
             </div>
-
-            <div>
-              <label htmlFor="email" className="block text-sm text-gray-700 mb-1">Email Address</label>
-              <input id="email" type="email" title="Email Address" className="w-full border border-pink-300 p-3 rounded-xl" />
-            </div>
-
-            <div>
-              <label htmlFor="address" className="block text-sm text-gray-700 mb-1">Delivery Address</label>
-              <input id="address" type="text" title="Delivery Address" className="w-full border border-pink-300 p-3 rounded-xl" />
-            </div>
-
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="w-full">
-                <label htmlFor="city" className="block text-sm text-gray-700 mb-1">City</label>
-                <input id="city" type="text" title="City" className="w-full border border-pink-300 p-3 rounded-xl" />
-              </div>
-              <div className="w-full">
-                <label htmlFor="phone" className="block text-sm text-gray-700 mb-1">Phone Number</label>
-                <input id="phone" type="text" title="Phone Number" className="w-full border border-pink-300 p-3 rounded-xl" />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="instruction" className="block text-sm text-gray-700 mb-1">Special Instruction (Optional)</label>
-              <input id="instruction" type="text" title="Special Instruction" className="w-full border border-pink-300 p-3 rounded-xl" />
-            </div>
-          </form>
-        </div>
+          </div>
+        ))}
       </div>
 
       {/* RIGHT: Order Summary */}
@@ -97,9 +85,12 @@ const CheckoutPage = () => {
         </div>
 
         <div className="space-y-4 mt-4">
-          <button className="w-full bg-rose-400 text-white font-semibold py-3 text-[18px] rounded-xl hover:bg-rose-500">
+          <Link
+            href="/cart/checkout"
+            className="block text-center w-full bg-rose-400 text-white font-semibold py-3 text-[18px] rounded-xl hover:bg-rose-500"
+          >
             Proceed to Checkout
-          </button>
+          </Link>
           <button className="w-full border border-gray-300 py-3 text-[18px] rounded-xl hover:bg-gray-100">
             Continue Shopping
           </button>
@@ -109,4 +100,4 @@ const CheckoutPage = () => {
   );
 };
 
-export default CheckoutPage;
+export default CartPage;
