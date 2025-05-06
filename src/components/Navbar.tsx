@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const user = false;
@@ -20,11 +22,9 @@ const Navbar = () => {
         <Link href="/menu" className="hover:text-pink-400">Products</Link>
         <Link href="/special_orders" className="hover:text-pink-400">Special Orders</Link>
         <Link href="/contact" className="hover:text-pink-400">Contact</Link>
-      </div>
-
-      {/* MOBILE MENU ICON or CART PLACEHOLDER */}
-      <div className="md:hidden">
-        <Image src="/menu-icon.png" alt="Menu" width={24} height={24} />
+        <Link href="/cart" className="hover:text-pink-400">
+          <FontAwesomeIcon icon={faShoppingCart} className="w-5 h-5" />
+        </Link>
       </div>
     </div>
   );

@@ -55,13 +55,12 @@ const MenuPage = () => {
                 {menu
                   .filter((item) => item.category?.toLowerCase() === cat.toLowerCase())
                   .map((item) => (
-                    <Link
-                      href={`/menu/${item.slug}`}
+                    <div
                       key={item.id}
                       className="flex flex-col items-center text-center space-y-4"
                     >
                       {/* Image */}
-                      <div className="relative h-[400px] w-full rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300">
+                      <div className="relative h-[400px] w-full rounded-2xl overflow-hidden">
                         {item.img && (
                           <Image
                             src={item.img}
@@ -73,15 +72,17 @@ const MenuPage = () => {
                       </div>
 
                       {/* Title */}
-                      <h2 className="font-semibold text-xl text-pink-700">
+                      <h2 className="font-semibold text-xl text-pink-700 mt-4">
                         {item.title}
                       </h2>
 
-                      {/* Button */}
-                      <button className="px-6 py-3 rounded-full bg-pink-600 text-white hover:bg-pink-700 transition">
-                        Order Now
-                      </button>
-                    </Link>
+                      {/* Order Now Button */}
+                      <Link href="/special_orders">
+                        <button className="px-6 py-3 rounded-full bg-pink-600 text-white hover:bg-pink-700 transition">
+                          Order Now
+                        </button>
+                      </Link>
+                    </div>
                   ))}
               </div>
             </section>
